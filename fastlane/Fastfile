@@ -1,0 +1,3 @@
+lane :test do
+  match_import_multiple
+end
