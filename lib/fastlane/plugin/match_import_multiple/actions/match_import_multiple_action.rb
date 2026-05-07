@@ -55,7 +55,7 @@ module Fastlane
                 UI.user_error!("Invalid profile_paths value: #{value.inspect}")
               end
 
-        raw.map(&:to_s).map(&:strip).reject(&:empty?).map do |path|
+        raw.map { |entry| entry.to_s.strip }.reject(&:empty?).map do |path|
           absolute = File.absolute_path(path)
           UI.user_error!("Provisioning profile does not exist at path: #{absolute}") unless File.exist?(absolute)
           absolute
