@@ -1,6 +1,9 @@
 # match_import_multiple plugin
 
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-match_import_multiple)
+[![Gem Version](https://badge.fury.io/rb/fastlane-plugin-match_import_multiple.svg)](https://rubygems.org/gems/fastlane-plugin-match_import_multiple)
+[![CI](https://github.com/BogdanMatran/fastlane-plugin-match_import_multiple/actions/workflows/test.yml/badge.svg)](https://github.com/BogdanMatran/fastlane-plugin-match_import_multiple/actions/workflows/test.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## About match_import_multiple
 
@@ -10,15 +13,23 @@ This plugin keeps the same UX as upstream `fastlane match import` (cert → p12 
 
 ## Installation
 
-Add the plugin to your project's `fastlane/Pluginfile`:
+The simplest way is to use _fastlane_'s built-in plugin command from inside a project that already uses _fastlane_:
 
-```ruby
-gem 'fastlane-plugin-match_import_multiple',
-    git: 'https://github.com/BogdanMatran/fastlane-plugin-match_import_multiple.git',
-    branch: 'main'
+```bash
+fastlane add_plugin match_import_multiple
 ```
 
-Then make sure your project's `Gemfile` evaluates the `Pluginfile`:
+That command adds the plugin to `fastlane/Pluginfile`, wires up the project's `Gemfile` if needed, and runs `bundle install`.
+
+### Manual installation
+
+If you'd rather wire it up by hand, add the plugin to your project's `fastlane/Pluginfile`:
+
+```ruby
+gem 'fastlane-plugin-match_import_multiple'
+```
+
+Make sure your project's `Gemfile` evaluates the `Pluginfile`:
 
 ```ruby
 # Gemfile
@@ -33,6 +44,16 @@ Install:
 
 ```bash
 bundle install
+```
+
+### Tracking unreleased changes
+
+If you want to follow `main` instead of the latest published gem, swap the Pluginfile entry for a git source:
+
+```ruby
+gem 'fastlane-plugin-match_import_multiple',
+    git: 'https://github.com/BogdanMatran/fastlane-plugin-match_import_multiple.git',
+    branch: 'main'
 ```
 
 ## Usage
